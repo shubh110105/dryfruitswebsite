@@ -1,0 +1,2188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Kesar & Co. – Premium dry fruits and namkeen in elegant glass jars. Perfect for corporate gifting, festive occasions, and healthy living in Lucknow.">
+<title>Kesar & Co. — Premium Dry Fruits & Namkeen | Lucknow</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================
+   CSS VARIABLES & RESET
+============================================ */
+:root {
+  --cream: #FAF8F5;
+  --white: #FFFFFF;
+  --gold: #C9A96E;
+  --gold-light: #E8D5B0;
+  --gold-dark: #A07840;
+  --charcoal: #1A1A1A;
+  --warm-gray: #6B6560;
+  --light-gray: #F0EDE8;
+  --border: rgba(201,169,110,0.2);
+  --wa-green: #25D366;
+  --shadow-sm: 0 2px 20px rgba(0,0,0,0.06);
+  --shadow-md: 0 8px 40px rgba(0,0,0,0.10);
+  --shadow-lg: 0 20px 60px rgba(0,0,0,0.15);
+  --radius: 16px;
+  --radius-sm: 8px;
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body: 'DM Sans', sans-serif;
+  --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--cream);
+  color: var(--charcoal);
+  overflow-x: hidden;
+  font-size: 15px;
+  line-height: 1.6;
+}
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+button { font-family: var(--font-body); cursor: pointer; border: none; outline: none; }
+
+/* ============================================
+   UTILITY
+============================================ */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+.section { padding: 80px 0; }
+.section-label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--charcoal);
+  margin-bottom: 16px;
+}
+.section-subtitle {
+  font-size: 15px;
+  color: var(--warm-gray);
+  max-width: 500px;
+  line-height: 1.7;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+.btn-gold {
+  background: var(--gold);
+  color: white;
+}
+.btn-gold:hover { background: var(--gold-dark); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(201,169,110,0.35); }
+.btn-outline {
+  background: transparent;
+  border: 1.5px solid var(--gold);
+  color: var(--gold);
+}
+.btn-outline:hover { background: var(--gold); color: white; }
+.btn-wa {
+  background: var(--wa-green);
+  color: white;
+}
+.btn-wa:hover { background: #20BB5A; transform: translateY(-1px); box-shadow: 0 8px 24px rgba(37,211,102,0.35); }
+.gold-line {
+  width: 40px; height: 1.5px;
+  background: var(--gold);
+  margin: 16px 0 24px;
+}
+.gold-line.center { margin: 16px auto 24px; }
+
+/* ============================================
+   NAV
+============================================ */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 0 20px;
+  transition: var(--transition);
+}
+nav.scrolled {
+  background: rgba(250,248,245,0.95);
+  backdrop-filter: blur(20px);
+  box-shadow: var(--shadow-sm);
+}
+.nav-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 70px;
+}
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--charcoal);
+  letter-spacing: 1px;
+}
+.nav-logo span { color: var(--gold); }
+.nav-links {
+  display: flex; gap: 32px; list-style: none;
+}
+.nav-links a {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--warm-gray);
+  transition: color var(--transition);
+  letter-spacing: 0.5px;
+}
+.nav-links a:hover { color: var(--gold); }
+.nav-cta { display: flex; gap: 10px; align-items: center; }
+.hamburger {
+  display: none;
+  flex-direction: column; gap: 5px;
+  background: none; border: none; cursor: pointer; padding: 4px;
+}
+.hamburger span {
+  display: block; width: 22px; height: 1.5px;
+  background: var(--charcoal); transition: var(--transition);
+}
+.mobile-menu {
+  display: none;
+  position: fixed; top: 70px; left: 0; right: 0; z-index: 999;
+  background: rgba(250,248,245,0.98);
+  backdrop-filter: blur(20px);
+  padding: 20px;
+  flex-direction: column; gap: 16px;
+  box-shadow: var(--shadow-md);
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  font-size: 15px; color: var(--charcoal);
+  padding: 10px 0;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+/* ============================================
+   HERO
+============================================ */
+#hero {
+  min-height: 100vh;
+  display: flex; align-items: center;
+  background: var(--cream);
+  padding-top: 70px;
+  position: relative;
+  overflow: hidden;
+}
+.hero-bg-decor {
+  position: absolute;
+  top: -200px; right: -200px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(201,169,110,0.12) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.hero-bg-decor2 {
+  position: absolute;
+  bottom: -100px; left: -100px;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(201,169,110,0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  width: 100%;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(201,169,110,0.1);
+  border: 1px solid var(--border);
+  padding: 6px 14px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--gold);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  animation: fadeUp 0.8s ease forwards;
+}
+.hero-badge::before {
+  content: '';
+  width: 6px; height: 6px;
+  background: var(--gold);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%,100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.3); }
+}
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 5.5vw, 68px);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--charcoal);
+  margin-bottom: 20px;
+  animation: fadeUp 0.8s 0.1s ease forwards;
+  opacity: 0;
+}
+.hero-title em {
+  font-style: italic;
+  color: var(--gold);
+}
+.hero-subtitle {
+  font-size: 15px;
+  color: var(--warm-gray);
+  line-height: 1.8;
+  margin-bottom: 32px;
+  max-width: 420px;
+  animation: fadeUp 0.8s 0.2s ease forwards;
+  opacity: 0;
+}
+.hero-btns {
+  display: flex; gap: 12px; flex-wrap: wrap;
+  animation: fadeUp 0.8s 0.3s ease forwards;
+  opacity: 0;
+}
+.hero-stats {
+  display: flex; gap: 32px; margin-top: 48px;
+  animation: fadeUp 0.8s 0.4s ease forwards;
+  opacity: 0;
+}
+.hero-stat .num {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--charcoal);
+}
+.hero-stat .label {
+  font-size: 11px;
+  color: var(--warm-gray);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+.hero-visual {
+  position: relative;
+  animation: fadeIn 1s 0.3s ease forwards;
+  opacity: 0;
+}
+.hero-jar-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.jar-card {
+  background: white;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition);
+}
+.jar-card:hover { transform: translateY(-6px); }
+.jar-card-img {
+  height: 160px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 60px;
+  background: var(--light-gray);
+}
+.jar-card-body { padding: 14px; }
+.jar-card-name {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+.jar-card-price {
+  font-size: 13px;
+  color: var(--gold);
+  font-weight: 500;
+}
+.jar-card.featured {
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.jar-card.featured .jar-card-img { height: 100%; min-height: 140px; }
+.hero-floating {
+  position: absolute;
+  top: -20px; right: -20px;
+  background: white;
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  box-shadow: var(--shadow-lg);
+  font-size: 12px;
+  font-weight: 500;
+  display: flex; align-items: center; gap: 8px;
+  animation: float 3s ease-in-out infinite;
+}
+.hero-floating2 {
+  position: absolute;
+  bottom: 20px; left: -20px;
+  background: white;
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  box-shadow: var(--shadow-lg);
+  font-size: 12px;
+  display: flex; align-items: center; gap: 8px;
+  animation: float 3s 1.5s ease-in-out infinite;
+}
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ============================================
+   WHY CHOOSE US
+============================================ */
+#why {
+  background: white;
+}
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  margin-top: 48px;
+}
+.feature-card {
+  background: var(--cream);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  border: 1px solid var(--border);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  transform: scaleX(0);
+  transition: transform var(--transition);
+  transform-origin: left;
+}
+.feature-card:hover::before { transform: scaleX(1); }
+.feature-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.feature-icon {
+  font-size: 36px;
+  margin-bottom: 16px;
+}
+.feature-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.feature-desc { font-size: 13px; color: var(--warm-gray); line-height: 1.7; }
+
+/* ============================================
+   PRODUCTS
+============================================ */
+#products { background: var(--cream); }
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 48px;
+}
+.product-card {
+  background: white;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  border: 1px solid var(--border);
+}
+.product-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+.product-img {
+  height: 220px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 80px;
+  background: var(--light-gray);
+  position: relative;
+  overflow: hidden;
+}
+.product-badge {
+  position: absolute;
+  top: 12px; left: 12px;
+  background: var(--gold);
+  color: white;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 100px;
+}
+.product-body { padding: 20px; }
+.product-name {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+.product-desc { font-size: 12px; color: var(--warm-gray); margin-bottom: 12px; line-height: 1.6; }
+.product-benefits {
+  display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px;
+}
+.product-tag {
+  background: rgba(201,169,110,0.1);
+  color: var(--gold-dark);
+  font-size: 10px;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 100px;
+  border: 1px solid var(--border);
+}
+.product-footer {
+  display: flex; align-items: center; justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--light-gray);
+}
+.product-price {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--charcoal);
+}
+.product-price span {
+  font-size: 13px;
+  color: var(--warm-gray);
+  font-family: var(--font-body);
+  font-weight: 400;
+}
+.btn-sm {
+  padding: 10px 18px;
+  font-size: 12px;
+  border-radius: 100px;
+}
+
+/* ============================================
+   CORPORATE GIFTING
+============================================ */
+#corporate {
+  background: var(--charcoal);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+#corporate::before {
+  content: '';
+  position: absolute;
+  top: -100px; right: -100px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(201,169,110,0.15) 0%, transparent 70%);
+  border-radius: 50%;
+}
+#corporate .section-title { color: white; }
+#corporate .section-subtitle { color: rgba(255,255,255,0.6); max-width: 600px; }
+.corporate-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-top: 48px;
+}
+.corp-features { display: flex; flex-direction: column; gap: 20px; }
+.corp-feature {
+  display: flex; gap: 16px; align-items: flex-start;
+}
+.corp-feature-icon {
+  width: 44px; height: 44px; min-width: 44px;
+  background: rgba(201,169,110,0.15);
+  border: 1px solid rgba(201,169,110,0.3);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+}
+.corp-feature-title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+  margin-bottom: 4px;
+}
+.corp-feature-desc { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.6; }
+.inquiry-form {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius);
+  padding: 36px;
+}
+.form-title {
+  font-family: var(--font-display);
+  font-size: 26px;
+  color: white;
+  margin-bottom: 8px;
+}
+.form-subtitle { font-size: 13px; color: rgba(255,255,255,0.5); margin-bottom: 24px; }
+.form-group { margin-bottom: 16px; }
+.form-group label {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: white;
+  transition: border-color var(--transition);
+  outline: none;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--gold);
+  background: rgba(255,255,255,0.1);
+}
+.form-group select option { background: #2a2a2a; color: white; }
+.form-group textarea { resize: vertical; min-height: 90px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+/* ============================================
+   TESTIMONIALS
+============================================ */
+#reviews { background: white; }
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 48px;
+}
+.review-card {
+  background: var(--cream);
+  border-radius: var(--radius);
+  padding: 28px;
+  border: 1px solid var(--border);
+  position: relative;
+}
+.review-quote {
+  font-size: 48px;
+  font-family: var(--font-display);
+  color: var(--gold-light);
+  line-height: 1;
+  margin-bottom: 12px;
+}
+.review-text {
+  font-size: 14px;
+  color: var(--warm-gray);
+  line-height: 1.7;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+.review-author {
+  display: flex; align-items: center; gap: 12px;
+}
+.review-avatar {
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  background: var(--gold-light);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+}
+.review-name {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 500;
+}
+.review-role { font-size: 11px; color: var(--warm-gray); }
+.stars { color: var(--gold); font-size: 13px; margin-bottom: 4px; }
+
+/* ============================================
+   OFFERS
+============================================ */
+#offers { background: var(--cream); }
+.offers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 48px;
+}
+.offer-card {
+  background: white;
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  border: 1px solid var(--border);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+}
+.offer-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.offer-card.hot::before {
+  content: 'HOT';
+  position: absolute;
+  top: 14px; right: -22px;
+  background: #E74C3C;
+  color: white;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 4px 28px;
+  transform: rotate(45deg);
+}
+.offer-icon { font-size: 48px; margin-bottom: 16px; }
+.offer-disc {
+  font-family: var(--font-display);
+  font-size: 48px;
+  font-weight: 600;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.offer-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.offer-desc { font-size: 13px; color: var(--warm-gray); margin-bottom: 20px; line-height: 1.6; }
+.offer-code {
+  background: rgba(201,169,110,0.1);
+  border: 1.5px dashed var(--gold);
+  border-radius: var(--radius-sm);
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gold-dark);
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.offer-code:hover { background: var(--gold); color: white; }
+
+/* ============================================
+   REFERRAL
+============================================ */
+#referral { background: white; }
+.referral-inner {
+  background: linear-gradient(135deg, var(--charcoal), #2d2519);
+  border-radius: 24px;
+  padding: 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.referral-inner::before {
+  content: '';
+  position: absolute;
+  top: -80px; right: -80px;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(201,169,110,0.2) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.referral-title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 400;
+  color: white;
+  margin-bottom: 16px;
+}
+.referral-desc { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.7; margin-bottom: 28px; }
+.referral-steps {
+  display: flex; flex-direction: column; gap: 20px;
+}
+.referral-step {
+  display: flex; gap: 16px; align-items: flex-start;
+}
+.step-num {
+  width: 36px; height: 36px; min-width: 36px;
+  background: var(--gold);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+}
+.step-text { font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.6; }
+.step-text strong { color: white; display: block; margin-bottom: 2px; }
+
+/* ============================================
+   BLOG
+============================================ */
+#blog { background: var(--cream); }
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 48px;
+}
+.blog-card {
+  background: white;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+.blog-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.blog-img {
+  height: 180px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 64px;
+  background: var(--light-gray);
+}
+.blog-body { padding: 20px; }
+.blog-category {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+.blog-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+.blog-excerpt { font-size: 12px; color: var(--warm-gray); line-height: 1.7; margin-bottom: 16px; }
+.blog-link {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--gold);
+  display: flex; align-items: center; gap: 4px;
+  transition: gap var(--transition);
+}
+.blog-link:hover { gap: 8px; }
+
+/* ============================================
+   FAQ
+============================================ */
+#faq { background: white; }
+.faq-list { margin-top: 48px; max-width: 700px; }
+.faq-item {
+  border-bottom: 1px solid var(--light-gray);
+  overflow: hidden;
+}
+.faq-question {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 20px 0;
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--charcoal);
+  transition: color var(--transition);
+}
+.faq-question:hover { color: var(--gold); }
+.faq-toggle {
+  width: 28px; height: 28px; min-width: 28px;
+  border-radius: 50%;
+  border: 1.5px solid var(--gold);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gold);
+  font-size: 18px;
+  font-weight: 300;
+  transition: var(--transition);
+}
+.faq-item.open .faq-toggle { background: var(--gold); color: white; transform: rotate(45deg); }
+.faq-answer {
+  display: none;
+  padding: 0 0 20px;
+  font-size: 14px;
+  color: var(--warm-gray);
+  line-height: 1.7;
+}
+.faq-item.open .faq-answer { display: block; }
+
+/* ============================================
+   MARKETPLACE
+============================================ */
+#marketplace { background: var(--cream); }
+.marketplace-grid {
+  display: flex; gap: 20px; flex-wrap: wrap;
+  margin-top: 32px;
+}
+.market-btn {
+  display: flex; align-items: center; gap: 12px;
+  padding: 16px 28px;
+  background: white;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-weight: 500;
+  transition: var(--transition);
+  cursor: pointer;
+}
+.market-btn:hover { border-color: var(--gold); box-shadow: var(--shadow-sm); transform: translateY(-2px); }
+.market-icon { font-size: 26px; }
+
+/* ============================================
+   PAYMENT
+============================================ */
+#payment { background: white; text-align: center; }
+.payment-methods {
+  display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+  margin-top: 32px;
+}
+.pay-card {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 16px 24px;
+  display: flex; align-items: center; gap: 10px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.pay-icon { font-size: 24px; }
+
+/* ============================================
+   VIDEO SECTION
+============================================ */
+#video { background: var(--charcoal); text-align: center; }
+#video .section-title { color: white; }
+#video .section-subtitle { color: rgba(255,255,255,0.5); margin: 0 auto 40px; }
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+.video-thumb {
+  background: rgba(255,255,255,0.05);
+  border-radius: var(--radius);
+  height: 180px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 48px;
+  position: relative;
+  cursor: pointer;
+  transition: var(--transition);
+  border: 1px solid rgba(255,255,255,0.1);
+  overflow: hidden;
+}
+.video-thumb:hover { background: rgba(201,169,110,0.15); border-color: var(--gold); }
+.play-btn {
+  width: 56px; height: 56px;
+  background: rgba(201,169,110,0.9);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+  color: white;
+  transition: var(--transition);
+  box-shadow: 0 0 0 0 rgba(201,169,110,0.4);
+  animation: ring 2s infinite;
+}
+@keyframes ring {
+  0% { box-shadow: 0 0 0 0 rgba(201,169,110,0.4); }
+  70% { box-shadow: 0 0 0 20px rgba(201,169,110,0); }
+  100% { box-shadow: 0 0 0 0 rgba(201,169,110,0); }
+}
+.video-label {
+  position: absolute; bottom: 14px; left: 14px; right: 14px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.8);
+  text-align: left;
+  font-weight: 500;
+}
+
+/* ============================================
+   EMAIL POPUP
+============================================ */
+.popup-overlay {
+  position: fixed; inset: 0; z-index: 9999;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(8px);
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px;
+  opacity: 0; pointer-events: none;
+  transition: opacity var(--transition);
+}
+.popup-overlay.show { opacity: 1; pointer-events: all; }
+.popup-box {
+  background: white;
+  border-radius: 20px;
+  max-width: 460px; width: 100%;
+  overflow: hidden;
+  transform: scale(0.9) translateY(20px);
+  transition: transform var(--transition);
+}
+.popup-overlay.show .popup-box { transform: scale(1) translateY(0); }
+.popup-top {
+  background: var(--charcoal);
+  padding: 36px 36px 28px;
+  text-align: center;
+  position: relative;
+}
+.popup-close {
+  position: absolute; top: 16px; right: 16px;
+  background: rgba(255,255,255,0.1);
+  border: none; border-radius: 50%;
+  width: 30px; height: 30px;
+  cursor: pointer;
+  color: white; font-size: 16px;
+  display: flex; align-items: center; justify-content: center;
+  transition: background var(--transition);
+}
+.popup-close:hover { background: rgba(255,255,255,0.2); }
+.popup-top .section-label { text-align: center; }
+.popup-top h2 {
+  font-family: var(--font-display);
+  font-size: 32px;
+  color: white;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+.popup-top h2 em { color: var(--gold); font-style: italic; }
+.popup-top p { font-size: 13px; color: rgba(255,255,255,0.55); }
+.popup-bottom { padding: 28px 36px; }
+.popup-email-form { display: flex; flex-direction: column; gap: 12px; }
+.popup-input {
+  width: 100%;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 13px 16px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--charcoal);
+  outline: none;
+  transition: border-color var(--transition);
+}
+.popup-input:focus { border-color: var(--gold); }
+.popup-note { font-size: 11px; color: var(--warm-gray); text-align: center; }
+
+/* ============================================
+   AI CHATBOT
+============================================ */
+.chatbot-trigger {
+  position: fixed;
+  bottom: 90px; right: 20px; z-index: 900;
+  width: 52px; height: 52px;
+  background: var(--charcoal);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px;
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  transition: var(--transition);
+  border: 2px solid var(--gold);
+}
+.chatbot-trigger:hover { transform: scale(1.1); }
+.chatbot-window {
+  position: fixed;
+  bottom: 160px; right: 20px; z-index: 900;
+  width: 320px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  display: none;
+  flex-direction: column;
+  max-height: 420px;
+}
+.chatbot-window.open { display: flex; }
+.chat-header {
+  background: var(--charcoal);
+  padding: 16px 20px;
+  display: flex; align-items: center; gap: 12px;
+  color: white;
+}
+.chat-avatar {
+  width: 36px; height: 36px;
+  background: var(--gold);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px;
+}
+.chat-name { font-weight: 500; font-size: 14px; }
+.chat-status { font-size: 11px; color: rgba(255,255,255,0.5); }
+.chat-close { margin-left: auto; cursor: pointer; font-size: 18px; opacity: 0.6; }
+.chat-messages {
+  flex: 1; padding: 16px;
+  overflow-y: auto;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.chat-msg {
+  max-width: 80%;
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.chat-msg.bot {
+  background: var(--light-gray);
+  color: var(--charcoal);
+  border-bottom-left-radius: 4px;
+  align-self: flex-start;
+}
+.chat-msg.user {
+  background: var(--gold);
+  color: white;
+  border-bottom-right-radius: 4px;
+  align-self: flex-end;
+}
+.chat-options {
+  padding: 10px 16px 16px;
+  display: flex; flex-wrap: wrap; gap: 6px;
+}
+.chat-opt {
+  background: rgba(201,169,110,0.1);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 6px 12px;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--gold-dark);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.chat-opt:hover { background: var(--gold); color: white; border-color: var(--gold); }
+.chat-input-row {
+  display: flex; gap: 8px;
+  padding: 0 16px 16px;
+}
+.chat-input {
+  flex: 1;
+  border: 1.5px solid var(--border);
+  border-radius: 100px;
+  padding: 8px 14px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  outline: none;
+}
+.chat-input:focus { border-color: var(--gold); }
+.chat-send {
+  width: 34px; height: 34px;
+  background: var(--gold);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.chat-send:hover { background: var(--gold-dark); }
+
+/* ============================================
+   STICKY WHATSAPP
+============================================ */
+.sticky-wa {
+  position: fixed; bottom: 24px; right: 20px; z-index: 950;
+  background: var(--wa-green);
+  color: white;
+  padding: 14px 22px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex; align-items: center; gap: 8px;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+  transition: var(--transition);
+  animation: bounce 3s ease-in-out infinite;
+}
+.sticky-wa:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 8px 30px rgba(37,211,102,0.5); }
+@keyframes bounce {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+/* ============================================
+   FOOTER
+============================================ */
+footer {
+  background: var(--charcoal);
+  color: white;
+  padding: 60px 0 30px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.footer-brand .nav-logo { font-size: 28px; margin-bottom: 12px; }
+.footer-desc { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.7; margin-bottom: 20px; max-width: 260px; }
+.social-links { display: flex; gap: 10px; }
+.social-link {
+  width: 36px; height: 36px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px;
+  transition: var(--transition);
+}
+.social-link:hover { background: var(--gold); }
+.footer-title { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+.footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-links a { font-size: 13px; color: rgba(255,255,255,0.55); transition: color var(--transition); }
+.footer-links a:hover { color: white; }
+.footer-bottom {
+  padding-top: 24px;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 12px;
+}
+.footer-copy { font-size: 12px; color: rgba(255,255,255,0.35); }
+.footer-location { font-size: 12px; color: rgba(255,255,255,0.35); display: flex; align-items: center; gap: 6px; }
+
+/* ============================================
+   SCROLL ANIMATIONS
+============================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+/* ============================================
+   TOAST
+============================================ */
+.toast {
+  position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%) translateY(30px);
+  background: var(--charcoal);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 100px;
+  font-size: 13px;
+  z-index: 9998;
+  opacity: 0;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* ============================================
+   RESPONSIVE
+============================================ */
+@media (max-width: 768px) {
+  .nav-links, .nav-cta .btn { display: none; }
+  .hamburger { display: flex; }
+  .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+  .hero-visual { order: -1; }
+  .hero-floating, .hero-floating2 { display: none; }
+  .hero-stats { gap: 20px; }
+  .corporate-grid { grid-template-columns: 1fr; gap: 40px; }
+  .referral-inner { grid-template-columns: 1fr; gap: 36px; padding: 36px 24px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .inquiry-form { padding: 24px; }
+  .section { padding: 60px 0; }
+  .chatbot-window { right: 10px; width: calc(100vw - 20px); }
+  .sticky-wa span { display: none; }
+  .sticky-wa { padding: 14px; border-radius: 50%; }
+}
+@media (max-width: 480px) {
+  .footer-grid { grid-template-columns: 1fr; }
+  .hero-btns { flex-direction: column; }
+  .hero-btns .btn { justify-content: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================
+     TOAST NOTIFICATION
+============================================ -->
+<div class="toast" id="toast">✓ Copied to clipboard!</div>
+
+<!-- ============================================
+     EMAIL POPUP
+============================================ -->
+<div class="popup-overlay" id="popup">
+  <div class="popup-box">
+    <div class="popup-top">
+      <button class="popup-close" onclick="closePopup()">✕</button>
+      <div class="section-label">Limited Offer</div>
+      <h2>Get <em>10% Off</em><br>Your First Order</h2>
+      <p>Join 2,000+ happy customers in Lucknow</p>
+    </div>
+    <div class="popup-bottom">
+      <div class="popup-email-form">
+        <input type="text" class="popup-input" placeholder="Your Name">
+        <input type="email" class="popup-input" placeholder="Your Email Address">
+        <input type="tel" class="popup-input" placeholder="WhatsApp Number">
+        <button class="btn btn-gold" style="justify-content:center; width:100%;" onclick="submitPopup()">
+          🎁 Claim My 10% Discount
+        </button>
+        <p class="popup-note">No spam, ever. Unsubscribe anytime.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================
+     NAVIGATION
+============================================ -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <div class="nav-logo">Kesar <span>&</span> Co.</div>
+    <ul class="nav-links">
+      <li><a href="#why">About</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#corporate">Corporate</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="https://wa.me/919999999999?text=Hi%2C%20I'd%20like%20to%20order%20from%20Kesar%20%26%20Co.!" class="btn btn-wa btn-sm" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.092.537 4.06 1.475 5.785L0 24l6.375-1.469A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.64-.515-5.145-1.41l-.371-.221-3.785.872.929-3.68-.242-.381A9.954 9.954 0 012 12c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        Order Now
+      </a>
+      <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#why" onclick="toggleMenu()">About Us</a>
+  <a href="#products" onclick="toggleMenu()">Products</a>
+  <a href="#corporate" onclick="toggleMenu()">Corporate Gifting</a>
+  <a href="#offers" onclick="toggleMenu()">Offers</a>
+  <a href="#reviews" onclick="toggleMenu()">Reviews</a>
+  <a href="#faq" onclick="toggleMenu()">FAQ</a>
+  <a href="https://wa.me/919999999999" target="_blank" class="btn btn-wa" style="justify-content:center; margin-top:8px;">WhatsApp Order</a>
+</div>
+
+<!-- ============================================
+     HERO
+============================================ -->
+<section id="hero">
+  <div class="hero-bg-decor"></div>
+  <div class="hero-bg-decor2"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <!-- Text -->
+      <div>
+        <div class="hero-badge">🌟 Lucknow's Premium Choice</div>
+        <h1 class="hero-title">
+          Pure Nature,<br>
+          <em>Beautifully Bottled.</em>
+        </h1>
+        <p class="hero-subtitle">
+          Premium dry fruits & artisan namkeen in elegant glass jars — crafted for gifting, celebrating, and nourishing the ones you love.
+        </p>
+        <div class="hero-btns">
+          <a href="https://wa.me/918858663833?text=Hi%2C%20I'd%20like%20to%20order%20premium%20dry%20fruits%20from%20Kesar%20%26%20Co.!" class="btn btn-wa" target="_blank">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.092.537 4.06 1.475 5.785L0 24l6.375-1.469A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.64-.515-5.145-1.41l-.371-.221-3.785.872.929-3.68-.242-.381A9.954 9.954 0 012 12c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10z"/></svg>
+            Order on WhatsApp
+          </a>
+          <a href="#corporate" class="btn btn-outline">Corporate Gifting →</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="num">2K+</div>
+            <div class="label">Happy Orders</div>
+          </div>
+          <div class="hero-stat">
+            <div class="num">100%</div>
+            <div class="label">Natural</div>
+          </div>
+          <div class="hero-stat">
+            <div class="num">1-Day</div>
+            <div class="label">Delivery Lucknow</div>
+          </div>
+        </div>
+      </div>
+      <!-- Visual -->
+      <div class="hero-visual">
+        <div class="hero-jar-grid">
+          <div class="jar-card">
+            <div class="jar-card-img">🫙</div>
+            <div class="jar-card-body">
+              <div class="jar-card-name">Kashmiri Kesar</div>
+              <div class="jar-card-price">From ₹299</div>
+            </div>
+          </div>
+          <div class="jar-card">
+            <div class="jar-card-img">🥜</div>
+            <div class="jar-card-body">
+              <div class="jar-card-name">Premium Nuts</div>
+              <div class="jar-card-price">From ₹249</div>
+            </div>
+          </div>
+          <div class="jar-card featured">
+            <div class="jar-card-img" style="font-size:80px;">🎁</div>
+            <div class="jar-card-body" style="padding:20px; display:flex; flex-direction:column; justify-content:center;">
+              <div class="jar-card-name" style="font-size:20px;">Gift Hamper</div>
+              <div style="font-size:12px; color:var(--warm-gray); margin:6px 0 12px;">3 jars, branded packaging</div>
+              <div class="jar-card-price" style="font-size:18px;">From ₹799</div>
+              <a href="https://wa.me/918858663833?text=I'd%20like%20to%20order%20the%20Gift%20Hamper!" target="_blank" class="btn btn-gold btn-sm" style="margin-top:12px;">Order Now →</a>
+            </div>
+          </div>
+        </div>
+        <div class="hero-floating">⭐ 4.9 Rating · 500+ Reviews</div>
+        <div class="hero-floating2">🚚 Free Delivery in Lucknow</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     WHY CHOOSE US
+============================================ -->
+<section id="why" class="section">
+  <div class="container">
+    <div class="section-label reveal">Our Promise</div>
+    <h2 class="section-title reveal">Why Lucknow Loves<br><em>Kesar & Co.</em></h2>
+    <div class="gold-line reveal"></div>
+    <p class="section-subtitle reveal">Every jar tells a story of care, quality, and craftsmanship.</p>
+    <div class="features-grid" style="margin-top:48px;">
+      <div class="feature-card reveal reveal-delay-1">
+        <div class="feature-icon">🌿</div>
+        <div class="feature-title">100% Natural</div>
+        <p class="feature-desc">No preservatives, no additives. Only the finest hand-selected dry fruits sourced directly from farms.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-2">
+        <div class="feature-icon">🫙</div>
+        <div class="feature-title">Elegant Glass Jars</div>
+        <p class="feature-desc">Food-grade premium glass that preserves freshness and looks stunning on any shelf or gift table.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-3">
+        <div class="feature-icon">🎁</div>
+        <div class="feature-title">Perfect for Gifting</div>
+        <p class="feature-desc">Corporate hampers, wedding gifts, festive boxes — beautifully presented for every occasion.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-1">
+        <div class="feature-icon">✅</div>
+        <div class="feature-title">Hygiene Certified</div>
+        <p class="feature-desc">FSSAI certified kitchen. Packed in sanitized environments with strict quality checks at every step.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-2">
+        <div class="feature-icon">💰</div>
+        <div class="feature-title">Affordable Luxury</div>
+        <p class="feature-desc">Premium quality doesn't have to break the bank. Starting at just ₹149 per jar — accessible excellence.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-3">
+        <div class="feature-icon">🚚</div>
+        <div class="feature-title">Same-Day Lucknow</div>
+        <p class="feature-desc">Order before 12 PM, receive by evening. Pan-city delivery with real-time updates on WhatsApp.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     PRODUCTS
+============================================ -->
+<section id="products" class="section">
+  <div class="container">
+    <div class="section-label reveal">Our Collection</div>
+    <h2 class="section-title reveal">Curated for<br><em>Every Taste</em></h2>
+    <div class="gold-line reveal"></div>
+    <p class="section-subtitle reveal">From Himalayan walnuts to artisan namkeen — each product is a small luxury.</p>
+    <div class="products-grid" style="margin-top:48px;">
+
+      <!-- Product 1 -->
+      <div class="product-card reveal">
+        <div class="product-img">
+          🌰
+          <div class="product-badge">Bestseller</div>
+        </div>
+        <div class="product-body">
+          <div class="product-name">Premium Almonds</div>
+          <p class="product-desc">California almonds, roasted to perfection. Rich in Vitamin E and healthy fats — your daily luxury snack.</p>
+          <div class="product-benefits">
+            <span class="product-tag">Heart Health</span>
+            <span class="product-tag">Brain Boost</span>
+            <span class="product-tag">200g Jar</span>
+          </div>
+          <div class="product-footer">
+            <div class="product-price">₹299 <span>/ jar</span></div>
+            <a href="https://wa.me/918858663833?text=I'd%20like%20to%20order%20Premium%20Almonds!" target="_blank" class="btn btn-wa btn-sm">Order</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-card reveal reveal-delay-1">
+        <div class="product-img">🥜</div>
+        <div class="product-body">
+          <div class="product-name">Cashew Royale</div>
+          <p class="product-desc">Jumbo whole cashews sourced from Goa. Buttery, creamy, and indulgent in every bite.</p>
+          <div class="product-benefits">
+            <span class="product-tag">Protein Rich</span>
+            <span class="product-tag">Iron Boost</span>
+            <span class="product-tag">250g Jar</span>
+          </div>
+          <div class="product-footer">
+            <div class="product-price">₹399 <span>/ jar</span></div>
+            <a href="https://wa.me/918858663833?text=I'd%20like%20to%20order%20Cashew%20Royale!" target="_blank" class="btn btn-wa btn-sm">Order</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product-card reveal reveal-delay-2">
+        <div class="product-img">
+          🫙
+          <div class="product-badge">New</div>
+        </div>
+        <div class="product-body">
+          <div class="product-name">Kashmiri Walnuts</div>
+          <p class="product-desc">Hand-picked from the valleys of Kashmir. Omega-3 packed, naturally sweet, and incredibly fresh.</p>
+          <div class="product-benefits">
+            <span class="product-tag">Omega-3</span>
+            <span class="product-tag">Anti-oxidant</span>
+            <span class="product-tag">200g Jar</span>
+          </div>
+          <div class="product-footer">
+            <div class="product-price">₹349 <span>/ jar</span></div>
+            <a href="https://wa.me/918858663833?text=I'd%20like%20to%20order%20Kashmiri%20Walnuts!" target="_blank" class="btn btn-wa btn-sm">Order</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="product-card reveal">
+        <div class="product-img">🌶️</div>
+        <div class="product-body">
+          <div class="product-name">Masala Namkeen</div>
+          <p class="product-desc">Spiced Lucknowi-style mix — a crunchy, flavourful blend that's completely addictive and 100% natural.</p>
+          <div class="product-benefits">
+            <span class="product-tag">Crunchy</span>
+            <span class="product-tag">No MSG</span>
+            <span class="product-tag">300g Jar</span>
+          </div>
+          <div class="product-footer">
+            <div class="product-price">₹199 <span>/ jar</span></div>
+            <a href="https://wa.me/918858663833?text=I'd%20like%20to%20order%20Masala%20Namkeen!" target="_blank" class="btn btn-wa btn-sm">Order</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 5 -->
+      <div class="product-card reveal reveal-delay-1">
+        <div class="product-img">
+          🍓
+          <div class="product-badge">Limited</div>
+        </div>
+        <div class="product-body">
+          <div class="product-name">Berry Mix Jar</div>
+          <p class="product-desc">Cranberries, raisins, and dried strawberries — a vibrant antioxidant-rich jar that's as beautiful as it is delicious.</p>
+          <div class="product-benefits">
+            <span class="product-tag">Antioxidants</span>
+            <span class="product-tag">Immunity</span>
+            <span class="product-tag">180g Jar</span>
+          </div>
+          <div class="product-footer">
+            <div class="product-price">₹279 <span>/ jar</span></div>
+            <a href="https://wa.me/918858663833?text=I'd%20like%20to%20order%20the%20Berry%20Mix%20Jar!" target="_blank" class="btn btn-wa btn-sm">Order</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 6 – Gift Combo -->
+      <div class="product-card reveal reveal-delay-2" style="border-color: var(--gold);">
+        <div class="product-img" style="background: linear-gradient(135deg, #fdf6e3, #f5e6c8);">
+          🎁
+          <div class="product-badge" style="background: var(--charcoal);">Gift Set</div>
+        </div>
+        <div class="product-body">
+          <div class="product-name">Festival Hamper</div>
+          <p class="product-desc">5 premium jars in a bespoke wooden box — the perfect festive gift for family, clients, and loved ones.</p>
+          <div class="product-benefits">
+            <span class="product-tag">5 Jars</span>
+            <span class="product-tag">Wooden Box</span>
+            <span class="product-tag">Custom Label</span>
+          </div>
+          <div class="product-footer">
+            <div class="product-price">₹1,299 <span>/ set</span></div>
+            <a href="https://wa.me/918858663833?text=I'd%20like%20to%20order%20the%20Festival%20Hamper!" target="_blank" class="btn btn-gold btn-sm">Order →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div style="text-align:center; margin-top:40px;">
+      <a href="https://wa.me/918858663833?text=Please%20share%20your%20full%20product%20catalogue!" target="_blank" class="btn btn-outline">View Full Catalogue →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     VIDEO SECTION
+============================================ -->
+<section id="video" class="section">
+  <div class="container">
+    <div class="section-label reveal" style="justify-content:center; display:flex;">Behind The Jar</div>
+    <h2 class="section-title reveal" style="text-align:center; color:white;">See Our Process</h2>
+    <p class="section-subtitle" style="color:rgba(255,255,255,0.5); text-align:center; margin:0 auto 40px;">From selection to packaging — every step crafted with love.</p>
+    <div class="video-grid reveal">
+      <div class="video-thumb" onclick="openWA('Share your product video link!')">
+        <div class="play-btn">▶</div>
+        <div class="video-label">🏔️ Sourcing from Kashmir</div>
+      </div>
+      <div class="video-thumb" onclick="openWA('Share your packaging video!')">
+        <div class="play-btn">▶</div>
+        <div class="video-label">🫙 Premium Jar Packaging</div>
+      </div>
+      <div class="video-thumb" onclick="openWA('Share your customer review video!')">
+        <div class="play-btn">▶</div>
+        <div class="video-label">💝 Customer Reactions</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     CORPORATE GIFTING
+============================================ -->
+<section id="corporate" class="section">
+  <div class="container">
+    <div class="section-label reveal">For Businesses</div>
+    <h2 class="section-title reveal">Corporate Gifting<br><em>Reimagined</em></h2>
+    <div class="gold-line reveal" style="background:var(--gold);"></div>
+    <p class="section-subtitle reveal">Impress clients, reward employees, and celebrate milestones with luxury that's remembered.</p>
+    <div class="corporate-grid">
+      <div class="corp-features">
+        <div class="corp-feature reveal">
+          <div class="corp-feature-icon">🏢</div>
+          <div>
+            <div class="corp-feature-title">Bulk Corporate Orders</div>
+            <p class="corp-feature-desc">50–5000+ pieces. Flat discounts up to 30% on bulk orders with priority delivery across Lucknow.</p>
+          </div>
+        </div>
+        <div class="corp-feature reveal reveal-delay-1">
+          <div class="corp-feature-icon">🎨</div>
+          <div>
+            <div class="corp-feature-title">Custom Branding</div>
+            <p class="corp-feature-desc">Your logo, your message. Custom labels, branded boxes, and personalized notes for every jar.</p>
+          </div>
+        </div>
+        <div class="corp-feature reveal reveal-delay-2">
+          <div class="corp-feature-icon">🎊</div>
+          <div>
+            <div class="corp-feature-title">Festive Gifting</div>
+            <p class="corp-feature-desc">Diwali, Eid, Christmas, New Year — curated festive hampers that leave lasting impressions.</p>
+          </div>
+        </div>
+        <div class="corp-feature reveal reveal-delay-3">
+          <div class="corp-feature-icon">💍</div>
+          <div>
+            <div class="corp-feature-title">Wedding & Events</div>
+            <p class="corp-feature-desc">Shaadi favors, sangeet gifts, return gifts — bespoke jarred goodness for every ceremony.</p>
+          </div>
+        </div>
+        <div class="corp-feature reveal">
+          <div class="corp-feature-icon">⚡</div>
+          <div>
+            <div class="corp-feature-title">48-Hour Turnaround</div>
+            <p class="corp-feature-desc">Rush orders accepted. Express delivery anywhere in Lucknow within 48 hours of confirmation.</p>
+          </div>
+        </div>
+      </div>
+      <div class="inquiry-form reveal">
+        <div class="form-title">Get a Quote</div>
+        <p class="form-subtitle">Fill in your details and we'll respond within 2 hours.</p>
+        <form onsubmit="submitCorpForm(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Name</label>
+              <input type="text" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+              <label>Company</label>
+              <input type="text" placeholder="Company name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>WhatsApp Number</label>
+            <input type="tel" placeholder="+91 XXXXX XXXXX" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Quantity</label>
+              <select>
+                <option>50–100 pieces</option>
+                <option>100–500 pieces</option>
+                <option>500–1000 pieces</option>
+                <option>1000+ pieces</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Occasion</label>
+              <select>
+                <option>Corporate Gift</option>
+                <option>Diwali Hamper</option>
+                <option>Wedding</option>
+                <option>Employee Reward</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea placeholder="Tell us about your requirements, budget, delivery date..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-gold" style="width:100%; justify-content:center;">
+            🎁 Request Corporate Quote →
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     REVIEWS
+============================================ -->
+<section id="reviews" class="section">
+  <div class="container">
+    <div class="section-label reveal">Social Proof</div>
+    <h2 class="section-title reveal">Loved Across<br><em>Lucknow</em></h2>
+    <div class="gold-line reveal"></div>
+    <div class="reviews-grid" style="margin-top:48px;">
+      <div class="review-card reveal">
+        <div class="review-quote">"</div>
+        <div class="stars">★★★★★</div>
+        <p class="review-text">Ordered the Diwali hamper for my clients — they were absolutely stunned by the packaging. Several called to ask where I'd bought it. Will reorder 100 pieces for Holi!</p>
+        <div class="review-author">
+          <div class="review-avatar">👩‍💼</div>
+          <div>
+            <div class="review-name">Priya Agarwal</div>
+            <div class="review-role">Director, Lucknow Realty Group</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card reveal reveal-delay-1">
+        <div class="review-quote">"</div>
+        <div class="stars">★★★★★</div>
+        <p class="review-text">The cashews are literally the best I've ever tasted. Fresh, perfectly packed. My kids fight over the jar. Delivery was same-day and the WhatsApp ordering is super easy!</p>
+        <div class="review-author">
+          <div class="review-avatar">👨‍👩‍👧</div>
+          <div>
+            <div class="review-name">Rahul & Meera Srivastava</div>
+            <div class="review-role">Family, Gomti Nagar</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card reveal reveal-delay-2">
+        <div class="review-quote">"</div>
+        <div class="stars">★★★★★</div>
+        <p class="review-text">Got 200 custom-branded jars for our office Diwali party. Professional, timely, and the quality was impeccable. Our employees loved it. Highly recommend for corporate orders.</p>
+        <div class="review-author">
+          <div class="review-avatar">🏢</div>
+          <div>
+            <div class="review-name">Vikram Khanna</div>
+            <div class="review-role">HR Head, Tech Corp Lucknow</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:36px;">
+      <a href="https://wa.me/918858663833?text=I'd%20like%20to%20share%20my%20review!" target="_blank" class="btn btn-outline">Share Your Experience →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     OFFERS
+============================================ -->
+<section id="offers" class="section">
+  <div class="container">
+    <div class="section-label reveal">Limited Time</div>
+    <h2 class="section-title reveal">Today's Special<br><em>Offers</em></h2>
+    <div class="gold-line reveal"></div>
+    <div class="offers-grid">
+      <div class="offer-card hot reveal">
+        <div class="offer-icon">🎄</div>
+        <div class="offer-disc">20%</div>
+        <div class="offer-title">Festival Special</div>
+        <p class="offer-desc">Get 20% off on all hampers and gift sets. Valid this festive season only!</p>
+        <div class="offer-code" onclick="copyCode('FEST20')">FEST20 — Tap to Copy</div>
+        <a href="https://wa.me/918858663833?text=I%20want%20to%20use%20code%20FEST20!" target="_blank" class="btn btn-gold btn-sm">Claim Offer</a>
+      </div>
+      <div class="offer-card reveal reveal-delay-1">
+        <div class="offer-icon">🏢</div>
+        <div class="offer-disc">30%</div>
+        <div class="offer-title">Corporate Bulk</div>
+        <p class="offer-desc">Order 100+ pieces and get flat 30% off plus free custom branding on every jar.</p>
+        <div class="offer-code" onclick="copyCode('CORP30')">CORP30 — Tap to Copy</div>
+        <a href="#corporate" class="btn btn-outline btn-sm">Enquire Now</a>
+      </div>
+      <div class="offer-card reveal reveal-delay-2">
+        <div class="offer-icon">👥</div>
+        <div class="offer-disc">₹50</div>
+        <div class="offer-title">Referral Reward</div>
+        <p class="offer-desc">Refer a friend and earn ₹50 off your next order. No limit on referrals!</p>
+        <div class="offer-code" onclick="copyCode('REF50')">REF50 — Tap to Copy</div>
+        <a href="#referral" class="btn btn-outline btn-sm">Learn More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     REFERRAL
+============================================ -->
+<section id="referral" class="section">
+  <div class="container">
+    <div class="referral-inner reveal">
+      <div>
+        <div class="section-label" style="color:var(--gold);">Earn Rewards</div>
+        <div class="referral-title">Share the<br><em style="color:var(--gold-light);">Goodness</em></div>
+        <p class="referral-desc">Invite your friends to Kesar & Co. and earn rewards on every successful order they place. It's that simple.</p>
+        <a href="https://wa.me/918858663833?text=I'd%20like%20to%20know%20more%20about%20the%20referral%20program!" target="_blank" class="btn btn-gold">Join Referral Program →</a>
+      </div>
+      <div class="referral-steps">
+        <div class="referral-step">
+          <div class="step-num">1</div>
+          <div class="step-text">
+            <strong>Share Your Code</strong>
+            Send your unique referral code to friends & family on WhatsApp.
+          </div>
+        </div>
+        <div class="referral-step">
+          <div class="step-num">2</div>
+          <div class="step-text">
+            <strong>Friend Orders</strong>
+            They place their first order using your code and save 10% instantly.
+          </div>
+        </div>
+        <div class="referral-step">
+          <div class="step-num">3</div>
+          <div class="step-text">
+            <strong>You Earn ₹50</strong>
+            Get ₹50 credited to your WhatsApp wallet for every successful referral. No limit!
+          </div>
+        </div>
+        <div class="referral-step">
+          <div class="step-num">💼</div>
+          <div class="step-text">
+            <strong>Corporate Referral Bonus</strong>
+            Refer a business client and earn ₹500 when they complete a bulk order.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     BLOG
+============================================ -->
+<section id="blog" class="section">
+  <div class="container">
+    <div class="section-label reveal">Wellness & Gifting</div>
+    <h2 class="section-title reveal">From Our<br><em>Kitchen Blog</em></h2>
+    <div class="gold-line reveal"></div>
+    <div class="blog-grid">
+      <div class="blog-card reveal">
+        <div class="blog-img">🥜</div>
+        <div class="blog-body">
+          <div class="blog-category">Health</div>
+          <div class="blog-title">7 Reasons to Eat Almonds Every Morning</div>
+          <p class="blog-excerpt">Start your day with a handful of almonds and transform your brain, skin, and heart health naturally...</p>
+          <div class="blog-link">Read More →</div>
+        </div>
+      </div>
+      <div class="blog-card reveal reveal-delay-1">
+        <div class="blog-img">🎁</div>
+        <div class="blog-body">
+          <div class="blog-category">Gifting Ideas</div>
+          <div class="blog-title">The Art of Corporate Gifting in India</div>
+          <p class="blog-excerpt">Why premium dry fruit hampers are replacing boring sweets in 2025's corporate culture...</p>
+          <div class="blog-link">Read More →</div>
+        </div>
+      </div>
+      <div class="blog-card reveal reveal-delay-2">
+        <div class="blog-img">🌙</div>
+        <div class="blog-body">
+          <div class="blog-category">Lifestyle</div>
+          <div class="blog-title">Healthy Ramadan Snacking with Dry Fruits</div>
+          <p class="blog-excerpt">Discover how dates, figs, and mixed nuts can make your Iftar both delicious and nutritious...</p>
+          <div class="blog-link">Read More →</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     FAQ
+============================================ -->
+<section id="faq" class="section">
+  <div class="container">
+    <div class="section-label reveal">Got Questions?</div>
+    <h2 class="section-title reveal">Frequently Asked<br><em>Questions</em></h2>
+    <div class="gold-line reveal"></div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Do you deliver across all of Lucknow?
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">Yes! We deliver to all areas of Lucknow — Gomti Nagar, Hazratganj, Aliganj, Indira Nagar, Alambagh, and more. Same-day delivery is available for orders placed before 12 PM.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          How fresh are your dry fruits?
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">Extremely fresh! We source directly from farms and pack in small batches every week. Glass jars maintain freshness for 3–6 months. No preservatives, no compromises.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Can I customize the labels for corporate orders?
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">Absolutely! We offer fully custom labels with your company logo, message, and brand colors. Minimum order for custom branding is 50 jars. Turnaround is 48–72 hours.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          What payment methods do you accept?
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">We accept UPI (PhonePe, GPay, Paytm), bank transfer, and Cash on Delivery for orders under ₹2,000. Corporate orders can also be fulfilled via NEFT/cheque with invoice.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Is there a minimum order quantity?
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">No minimum for retail orders — buy just 1 jar! For corporate orders with custom branding, minimum is 50 units. Bulk pricing starts at 20+ jars of the same SKU.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Do you offer subscription boxes?
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">Yes! Our monthly subscription box delivers a curated selection of 3 premium jars to your doorstep every month. Subscribe and save 15% automatically. WhatsApp us to enroll!</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     MARKETPLACE
+============================================ -->
+<section id="marketplace" class="section" style="background:white;">
+  <div class="container">
+    <div class="section-label reveal">Find Us Online</div>
+    <h2 class="section-title reveal">Also Available<br><em>On Marketplaces</em></h2>
+    <p class="section-subtitle reveal">Shop on your favourite platform — but WhatsApp always gets you the best price!</p>
+    <div class="marketplace-grid reveal" style="margin-top:32px;">
+      <a href="#" class="market-btn" target="_blank">
+        <div class="market-icon">🛍️</div>
+        <div>
+          <div style="font-weight:600;">Meesho</div>
+          <div style="font-size:11px; color:var(--warm-gray);">Shop on Meesho</div>
+        </div>
+        <div style="margin-left:auto; color:var(--warm-gray);">→</div>
+      </a>
+      <a href="#" class="market-btn" target="_blank">
+        <div class="market-icon">📦</div>
+        <div>
+          <div style="font-weight:600;">Amazon</div>
+          <div style="font-size:11px; color:var(--warm-gray);">Shop on Amazon</div>
+        </div>
+        <div style="margin-left:auto; color:var(--warm-gray);">→</div>
+      </a>
+      <a href="https://wa.me/918858663833" class="market-btn" target="_blank" style="border-color: var(--wa-green);">
+        <div class="market-icon">💬</div>
+        <div>
+          <div style="font-weight:600; color:var(--wa-green);">WhatsApp Direct</div>
+          <div style="font-size:11px; color:var(--warm-gray);">Best price + free delivery</div>
+        </div>
+        <div style="margin-left:auto; color:var(--wa-green);">→</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     PAYMENT
+============================================ -->
+<section id="payment" class="section">
+  <div class="container" style="text-align:center;">
+    <div class="section-label reveal" style="justify-content:center; display:flex;">Safe & Easy</div>
+    <h2 class="section-title reveal">Payment Options</h2>
+    <div class="gold-line reveal center"></div>
+    <p class="section-subtitle reveal" style="margin:0 auto 40px;">Multiple ways to pay — all safe, instant, and verified.</p>
+    <div class="payment-methods reveal">
+      <div class="pay-card"><div class="pay-icon">📱</div>UPI — GPay, PhonePe, Paytm</div>
+      <div class="pay-card"><div class="pay-icon">🏦</div>Bank Transfer (NEFT/IMPS)</div>
+      <div class="pay-card"><div class="pay-icon">💵</div>Cash on Delivery</div>
+      <div class="pay-card"><div class="pay-icon">🧾</div>Invoice for Corporates</div>
+    </div>
+    <p style="margin-top:24px; font-size:12px; color:var(--warm-gray);">🔒 All transactions are secure. FSSAI Certified · GST Compliant</p>
+  </div>
+</section>
+
+<!-- ============================================
+     FOOTER
+============================================ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo">Kesar <span style="color:var(--gold);">&</span> Co.</div>
+        <p class="footer-desc">Premium dry fruits & artisan namkeen in elegant glass jars. Delivering luxury and wellness to Lucknow since 2022.</p>
+        <div class="social-links">
+          <a href="#" class="social-link">📘</a>
+          <a href="#" class="social-link">📸</a>
+          <a href="https://wa.me/918858663833" class="social-link" target="_blank">💬</a>
+          <a href="#" class="social-link">🎵</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-title">Products</div>
+        <ul class="footer-links">
+          <li><a href="#products">Premium Almonds</a></li>
+          <li><a href="#products">Cashew Royale</a></li>
+          <li><a href="#products">Kashmiri Walnuts</a></li>
+          <li><a href="#products">Masala Namkeen</a></li>
+          <li><a href="#products">Gift Hampers</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-title">Company</div>
+        <ul class="footer-links">
+          <li><a href="#why">About Us</a></li>
+          <li><a href="#corporate">Corporate Gifting</a></li>
+          <li><a href="#referral">Referral Program</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-title">Contact</div>
+        <ul class="footer-links">
+          <li><a href="https://wa.me/918858663833" target="_blank">WhatsApp: +91 99999 99999</a></li>
+          <li><a href="mailto:hello@kesarco.in">hello@kesarco.in</a></li>
+          <li><a href="#marketplace">Amazon</a></li>
+          <li><a href="#marketplace">Meesho</a></li>
+        </ul>
+        <div style="margin-top:16px; font-size:12px; color:rgba(255,255,255,0.4);">
+          📍 Lucknow, Uttar Pradesh<br>India — 226001
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 Kesar & Co. All rights reserved. FSSAI Lic. No. XXXXXXXXXXXXXXX</div>
+      <div class="footer-location">📍 Delivering across Lucknow with love</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================
+     STICKY WHATSAPP
+============================================ -->
+<a href="https://wa.me/918858663833?text=Hi%2C%20I'd%20like%20to%20order%20from%20Kesar%20%26%20Co.!" class="sticky-wa" target="_blank">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.092.537 4.06 1.475 5.785L0 24l6.375-1.469A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.64-.515-5.145-1.41l-.371-.221-3.785.872.929-3.68-.242-.381A9.954 9.954 0 012 12c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10z"/></svg>
+  <span>Order on WhatsApp</span>
+</a>
+
+<!-- CHATBOT TRIGGER -->
+<div class="chatbot-trigger" id="chatTrigger" onclick="toggleChat()">🤖</div>
+
+<!-- CHATBOT WINDOW -->
+<div class="chatbot-window" id="chatWindow">
+  <div class="chat-header">
+    <div class="chat-avatar">🤖</div>
+    <div>
+      <div class="chat-name">Kesar Assistant</div>
+      <div class="chat-status">Usually replies instantly</div>
+    </div>
+    <div class="chat-close" onclick="toggleChat()">✕</div>
+  </div>
+  <div class="chat-messages" id="chatMessages">
+    <div class="chat-msg bot">Hello! 👋 Welcome to Kesar & Co. How can I help you today?</div>
+  </div>
+  <div class="chat-options" id="chatOptions">
+    <div class="chat-opt" onclick="chatReply('order')">🛒 Place Order</div>
+    <div class="chat-opt" onclick="chatReply('corporate')">🏢 Corporate Gifting</div>
+    <div class="chat-opt" onclick="chatReply('products')">🫙 Our Products</div>
+    <div class="chat-opt" onclick="chatReply('delivery')">🚚 Delivery Info</div>
+  </div>
+  <div class="chat-input-row">
+    <input type="text" class="chat-input" id="chatInput" placeholder="Type a message..." onkeypress="chatKeyPress(event)">
+    <div class="chat-send" onclick="sendChatMsg()">→</div>
+  </div>
+</div>
+
+<!-- ============================================
+     JAVASCRIPT
+============================================ -->
+<script>
+// ——— NAV SCROLL ———
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// ——— MOBILE MENU ———
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+
+// ——— SCROLL REVEAL ———
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// ——— FAQ ———
+function toggleFaq(el) {
+  const item = el.parentElement;
+  document.querySelectorAll('.faq-item').forEach(f => { if (f !== item) f.classList.remove('open'); });
+  item.classList.toggle('open');
+}
+
+// ——— CHATBOT ———
+const chatResponses = {
+  order: {
+    msg: "Great! You can order directly on WhatsApp for fastest service. Click the button below 👇",
+    action: 'wa'
+  },
+  corporate: {
+    msg: "We offer custom branded jars for corporate gifting! Minimum 50 pcs, up to 30% off on bulk. Shall I connect you with our corporate team?",
+    action: 'wa_corp'
+  },
+  products: {
+    msg: "We offer Premium Almonds (₹299), Cashew Royale (₹399), Kashmiri Walnuts (₹349), Masala Namkeen (₹199), Berry Mix (₹279), and Gift Hampers (₹1,299+). Which interests you?",
+    action: null
+  },
+  delivery: {
+    msg: "🚚 We deliver across all of Lucknow! Same-day delivery for orders placed before 12 PM. Free delivery on orders above ₹499.",
+    action: null
+  }
+};
+
+function toggleChat() {
+  document.getElementById('chatWindow').classList.toggle('open');
+}
+
+function chatReply(type) {
+  const resp = chatResponses[type];
+  addChatMsg(document.querySelector(`.chat-opt[onclick="chatReply('${type}')"]`).textContent, 'user');
+  setTimeout(() => {
+    addChatMsg(resp.msg, 'bot');
+    if (resp.action === 'wa') {
+      setTimeout(() => {
+        document.getElementById('chatOptions').innerHTML = `<a href="https://wa.me/918858663833?text=I'd%20like%20to%20place%20an%20order!" target="_blank" class="btn btn-wa btn-sm" style="margin:4px 8px 8px;">Open WhatsApp →</a>`;
+      }, 300);
+    } else if (resp.action === 'wa_corp') {
+      setTimeout(() => {
+        document.getElementById('chatOptions').innerHTML = `<a href="https://wa.me/918858663833?text=I'm%20interested%20in%20corporate%20gifting!" target="_blank" class="btn btn-gold btn-sm" style="margin:4px 8px 8px;">Contact Corporate Team →</a>`;
+      }, 300);
+    }
+  }, 500);
+}
+
+function addChatMsg(text, type) {
+  const msgs = document.getElementById('chatMessages');
+  const div = document.createElement('div');
+  div.className = `chat-msg ${type}`;
+  div.textContent = text;
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function sendChatMsg() {
+  const input = document.getElementById('chatInput');
+  const val = input.value.trim();
+  if (!val) return;
+  addChatMsg(val, 'user');
+  input.value = '';
+  setTimeout(() => {
+    const lower = val.toLowerCase();
+    let response = "Thanks for your message! 😊 For instant help, please WhatsApp us at +91 99999 99999 or choose an option below.";
+    if (lower.includes('price') || lower.includes('cost') || lower.includes('rate')) response = "Our prices start from ₹149! Premium Almonds ₹299, Cashews ₹399, Walnuts ₹349, Namkeen ₹199. All in beautiful glass jars! 🫙";
+    else if (lower.includes('deliver') || lower.includes('ship')) response = "We deliver across all of Lucknow! Same-day delivery before 12 PM. Free delivery above ₹499! 🚚";
+    else if (lower.includes('gift') || lower.includes('hamper')) response = "Our gift hampers start at ₹799 and go up to ₹2,999 for luxury sets. Custom branding available! 🎁";
+    addChatMsg(response, 'bot');
+  }, 600);
+}
+
+function chatKeyPress(e) {
+  if (e.key === 'Enter') sendChatMsg();
+}
+
+// ——— POPUP ———
+setTimeout(() => {
+  if (!localStorage.getItem('kesar_popup')) {
+    document.getElementById('popup').classList.add('show');
+  }
+}, 8000);
+
+function closePopup() {
+  document.getElementById('popup').classList.remove('show');
+  localStorage.setItem('kesar_popup', '1');
+}
+
+function submitPopup() {
+  closePopup();
+  showToast('🎁 Code FIRST10 applied! Happy shopping!');
+}
+
+// ——— CORPORATE FORM ———
+function submitCorpForm(e) {
+  e.preventDefault();
+  showToast('✅ Inquiry sent! We\'ll WhatsApp you within 2 hours.');
+  e.target.reset();
+}
+
+// ——— COPY CODE ———
+function copyCode(code) {
+  navigator.clipboard.writeText(code).catch(() => {});
+  showToast(`✓ Code "${code}" copied!`);
+}
+
+// ——— TOAST ———
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3000);
+}
+
+// ——— WA HELPER ———
+function openWA(msg) {
+  window.open(`https://wa.me/918858663833?text=${encodeURIComponent(msg)}`, '_blank');
+}
+</script>
+
+</body>
+</html>
